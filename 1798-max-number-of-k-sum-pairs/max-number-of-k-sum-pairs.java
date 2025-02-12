@@ -1,18 +1,25 @@
 class Solution {
     public int maxOperations(int[] nums, int k) {
-        Map<Integer, Integer> freqMap = new HashMap <>();
+        Arrays.sort(nums);
+        int left = 0;
+        int right = nums.length - 1;
         int op = 0;
-        for (int num: nums){
-            int complement = k - num;
-            if (freqMap.getOrDefault(complement, 0) > 0){
+        while (left < right){
+            int sum = nums[left] + nums[right];
+            if (sum == k){
                 op++;
-                freqMap.put(complement, freqMap.get(complement) - 1);
+                left++;
+                right--;
+            }
+            else if (sum < k){
+                left++;
             }
 
             else {
-                freqMap.put(num, freqMap.getOrDefault(num, 0) + 1);
+                right --;
             }
         }
+
         return op;
     }
 }
