@@ -1,18 +1,15 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        # Create a counter  
+        # counter 
         count = 0 
-        #Create a candidate 
-        candidate = None
-        # Loop for all elements 
+        # then select a canidate element
+        canidate = None 
+        #for loop all elements
         for num in nums:
             if count == 0:
-                candidate = num 
-            if num == candidate:
+                canidate = num
+            if canidate == num: 
                 count += 1
-            else:
+            else: 
                 count -= 1
-        return candidate 
-
-
-        
+        return canidate  
