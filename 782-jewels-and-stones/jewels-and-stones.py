@@ -8,6 +8,6 @@ class Solution(object):
         check = set(jewels)
         ans = 0
         for rock in stones:
-            if rock in jewels:
+            if rock in check:
                 ans += 1
         return ans 
