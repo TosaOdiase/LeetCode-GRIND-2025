@@ -5,8 +5,6 @@ class Solution(object):
         :type friends: List[int]
         :rtype: List[int]
         """
-        if len(friends) > len(order):
-            return friends 
         ans = []
         for person in order:
             if person in friends:
