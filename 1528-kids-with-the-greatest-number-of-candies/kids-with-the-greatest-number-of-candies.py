@@ -6,7 +6,8 @@ class Solution(object):
         :rtype: List[bool]
         """
         result = []
+        big = max(candies)
         for i in range(0,len(candies)):
-            result.append((candies[i]+extraCandies) >= max(candies))
+            result.append((candies[i]+extraCandies) >= big)
         return result
         
