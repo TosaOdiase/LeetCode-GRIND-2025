@@ -7,9 +7,6 @@ class Solution(object):
         """
         result = []
         for num in candies:
-            if (num + extraCandies) >= max(candies):
-                result.append(True)
-            else:
-                result.append(False)
+            result.append((num+extraCandies) >= max(candies))
         return result
         
