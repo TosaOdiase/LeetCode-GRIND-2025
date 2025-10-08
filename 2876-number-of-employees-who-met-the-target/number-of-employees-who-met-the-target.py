@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: int
         """
         count = 0
-        for i in range(len(hours)):
-            if hours[i] >= target:
+        for i in hours:
+            if i >= target:
                 count+= 1
         return count
