@@ -6,7 +6,7 @@ class Solution(object):
         :rtype: int
         """
         x = start ^ goal
-        y = str(bin(x))
+        y = (bin(x))
         count = 0
         for char in y[2:]:
             if char == '1':
