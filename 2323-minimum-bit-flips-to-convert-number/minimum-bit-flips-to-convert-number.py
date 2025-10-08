@@ -5,9 +5,10 @@ class Solution(object):
         :type goal: int
         :rtype: int
         """
-        x = bin(start ^ goal)[2:]
+        x = start ^ goal
+        y = str(bin(x))
         count = 0
-        for char in x:
+        for char in y[2:]:
             if char == '1':
                 count += 1
         return count
