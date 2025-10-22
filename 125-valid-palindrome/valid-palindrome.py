@@ -17,10 +17,9 @@ class Solution(object):
         backward = ""
 
         for letter in s:
-            if letter.isalpha():
+            if letter.isalnum():
                 clean += letter.lower()
-            elif letter.isdigit():
-                clean += letter
+        
         for item in reversed(clean):
             backward += item
         return backward == clean 
