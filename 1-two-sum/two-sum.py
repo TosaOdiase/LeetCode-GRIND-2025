@@ -5,21 +5,18 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        # there is only one solution of indexes 
-        # they need to add to the target value
-
-
-        # create a difference variabel between the value and the target 
-       # create a hash map to store previous differences
-
-       # check if the difference is in the hash, if not then add the new diff to teh hash 
-       # if it does excists, return that map index and the number index 
+        # exactly one answer 
+        # two numbers that add up to the target value 
+        # you may not use the same element twice 
+        
+        # hashmap --> store the difference of each number and the target 
+        # check through each number to see if they match teh difference 
 
         prevDiff = {}
 
         for i, n in enumerate(nums):
-            diff = target - n
-            if diff in prevDiff:
-                return [prevDiff[diff], i]
-            prevDiff[n] = i 
-    
+            difference = target - n
+            if difference in prevDiff:
+                return [prevDiff[difference], i]
+            else:
+                prevDiff[n] = i
