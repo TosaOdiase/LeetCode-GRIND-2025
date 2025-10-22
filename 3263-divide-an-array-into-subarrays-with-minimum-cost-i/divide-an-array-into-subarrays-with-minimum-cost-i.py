@@ -11,12 +11,16 @@ class Solution(object):
         # after the first, must find the two lowest numbers to start at 
 
         # create a best value 
-        best = 3000
 
-        for i in range(1, len(nums)):
-            for j in range(i+1,len(nums)):
-                best = min(best, nums[0] + nums[i] + nums[j])
-        return best
+        #exclude the first index 
+        n = len(nums)
+        d = nums[0]
 
+        # sort the rest, to get the two lowest in front 
+
+        nums[1:n] = sorted(nums[1:n])
+
+        ans = d + nums[1] + nums[2]
+        return ans
 
         
