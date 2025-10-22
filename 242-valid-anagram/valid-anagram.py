@@ -6,6 +6,9 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
+        if len(s) != len(t):
+            return False
+
         freq_t = Counter(t)
         freq_s = Counter(s)
 
