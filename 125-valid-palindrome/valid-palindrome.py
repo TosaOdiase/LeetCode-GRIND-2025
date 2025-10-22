@@ -4,22 +4,22 @@ class Solution(object):
         :type s: str
         :rtype: bool
         """
-        # without alpha numeric characters 
-        # it has to reach the same forward and backward 
-        # every character is lowercase 
+        # two pointer method 
 
-        # create a new string for "fixed" string 
-        # create a string that contains backwards iteration 
-        # go through input, clean out non alpha, lowercase 
-        # go backwards through this clean string, see if it equals the original clean string 
+        # all characters to be alphanumeric 
+        # all characters to be lowercase 
+        # characters forward/backward to be the same 
 
-        clean = ""
-        backward = ""
+        left = 0 
+        right = len(s) - 1
 
-        for letter in s:
-            if letter.isalnum():
-                clean += letter.lower()
-        
-        for item in reversed(clean):
-            backward += item
-        return backward == clean 
+        while left < right:
+            while not s[left].isalnum() and left < right:
+                left +=1 
+            while not s[right].isalnum() and left < right:
+                right -= 1
+            if s[left].lower() != s[right].lower():
+                return False
+            left += 1
+            right -= 1
+        return True
