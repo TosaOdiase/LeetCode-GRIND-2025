@@ -20,5 +20,4 @@ class Solution(object):
             if numbers[i] == "6":
                 numbers[i] = "9"
                 break 
-        ans = "".join(numbers)
-        return int(ans)
+        return int("".join(numbers))
