@@ -4,21 +4,21 @@ class Solution(object):
         :type num: int
         :rtype: int
         """
-        #only has sixes and nines 
-        # only one change is allowed 
-        # need the highest value 
-        # highest value is going to be changing the leftmost six into a nine 
-        
-        # change the number into a list of characters
-        # then i would have to iterate through characters, changing the first six to a nine 
-        # i would then join the characters togetehr and convert to an integer 
+        #integer only consists of 6s and 9 
+        # only change one 
+        # max value 
 
-        string = list(str(num))
+        #change the leftmost 6 into a 9 
+        # turn the number into a list of strings 
 
-        for i in range(len(string)):
-            if string[i] == '6':
-                string[i] = '9'
+        # then i will iterate through the string and replace the first 6 with a 9 
+        # convert back to an integer 
+
+        numbers = list(str(num))
+
+        for i in range(len(numbers)):
+            if numbers[i] == "6":
+                numbers[i] = "9"
                 break 
-        ans = int("".join(string))
-        return ans
-        
+        ans = "".join(numbers)
+        return int(ans)
