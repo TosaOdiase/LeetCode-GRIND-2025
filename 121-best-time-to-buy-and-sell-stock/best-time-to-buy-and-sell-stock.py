@@ -9,6 +9,6 @@ class Solution(object):
         for price in prices:
             if price < minP:
                 minP = price 
-            else:
-                maxP = max(maxP, price - minP)
+            elif price-minP > maxP:
+                maxP = price-minP
         return maxP
