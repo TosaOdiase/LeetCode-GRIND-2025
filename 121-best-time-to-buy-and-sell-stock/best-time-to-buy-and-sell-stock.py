@@ -5,10 +5,12 @@ class Solution(object):
         :rtype: int
         """
         minP = float('inf')
-        maxP = 0 
+        maxProfit = 0 
+
         for price in prices:
             if price < minP:
-                minP = price 
-            elif price-minP > maxP:
-                maxP = price-minP
-        return maxP
+                minP = price
+            if price - minP > maxProfit:
+                maxProfit = price - minP
+        return maxProfit
+        
