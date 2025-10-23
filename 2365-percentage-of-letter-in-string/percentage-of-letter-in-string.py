@@ -5,17 +5,9 @@ class Solution(object):
         :type letter: str
         :rtype: int
         """
-        # return percentage of characters that equal letter in s
-        # rounded down to the nearest whole percent 
-
-
-        # iterate through the string, check if character equals letter 
-        # increment a count 
-        # then i would divide by count by the length of the string 
-        # round(2)
-
         count = 0 
-        for item in s:
-            if item == letter:
+
+        for k in s:
+            if k == letter:
                 count += 1
-        return int(float(count)/float(len(s))*100)
+        return int(count/float(len(s))*100)
