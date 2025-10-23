@@ -18,17 +18,17 @@ class Solution(object):
 
         n = len(nums)
 
-        temp, ans = [], []
+        temp, ans = [], [] # create a temo array and an answer array 
 
-        def backtrack():
-            if len(temp) == n:
+        def backtrack(): # create a helper function 
+            if len(temp) == n: #check the base case, if the perm is full
                 ans.append(temp[:])
-                return 
+                return # exit out 
 
-            for x in nums:
-                if x not in temp:
-                    temp.append(x)
-                    backtrack()
-                    temp.pop()
-        backtrack()
-        return ans
+            for x in nums: # iterate through each number 
+                if x not in temp: # check if this number isnt in the temp array 
+                    temp.append(x) # add it to the temp array 
+                    backtrack() # create permutations
+                    temp.pop() # pop the number so that it can reset for the next loop 
+        backtrack() # initial trigger for the recursion 
+        return ans # output answer 
