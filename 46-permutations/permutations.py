@@ -4,31 +4,22 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[List[int]]
         """
-        # set the length of the nums 
-        # create a temp array, and a result array 
-
-        # create backtrack function 
-        # base case: if temp == length of the num, return a copy of the solution 
-        # iterate through the numbers 
-        # append the current number
-        # run teh backtrcak function to add permutations to sol
-        # pop the number that you added on orriginallty 
-
-        #run backtrack, the inital trigger 
+        # recursion probelm 
+        # result, list of arrays with all permutations 
+        # need helper function to split subarrays and add to elements, and pop one that are not needed 
 
         n = len(nums)
+        ans, temp = [], []
 
-        temp, ans = [], [] # create a temo array and an answer array 
-
-        def backtrack(): # create a helper function 
-            if len(temp) == n: #check the base case, if the perm is full
+        def backtrack():
+            if len(temp) == n:
                 ans.append(temp[:])
-                return # exit out 
-
-            for x in nums: # iterate through each number 
-                if x not in temp: # check if this number isnt in the temp array 
-                    temp.append(x) # add it to the temp array 
-                    backtrack() # create permutations
-                    temp.pop() # pop the number so that it can reset for the next loop 
-        backtrack() # initial trigger for the recursion 
-        return ans # output answer 
+                return 
+            for x in nums:
+                if x not in temp:
+                    temp.append(x)
+                    backtrack()
+                    temp.pop()
+        backtrack()
+        return ans
+        
