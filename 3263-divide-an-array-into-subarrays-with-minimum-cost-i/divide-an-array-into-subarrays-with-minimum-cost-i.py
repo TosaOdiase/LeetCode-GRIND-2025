@@ -10,4 +10,5 @@ class Solution(object):
         x = nums[0]
         n = len(nums)
         nums[1:n] = sorted(nums[1:n])
-        return x + nums[1] + nums[2]
+        s = x + nums[1] + nums[2]
+        return s
