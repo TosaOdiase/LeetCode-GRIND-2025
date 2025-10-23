@@ -12,7 +12,7 @@ class Solution(object):
             countT[s[i]] = 1 + countT.get(s[i], 0)
             countS[t[i]] = 1 + countS.get(t[i], 0)
         for num in countT:
-            if countT.get(num, 0) != countS.get(num, 0):
+            if countT[num] != countS.get(num,0):
                 return False 
         return True
         
