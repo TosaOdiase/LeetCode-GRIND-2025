@@ -12,7 +12,7 @@ class Solution(object):
         # count the amount of 1s in the binary set of that result 
         finalXor = 0
         for num in nums:
-            finalXor = finalXor ^ num
+            finalXor ^= num
         finalXor = finalXor ^ k 
 
         return bin(finalXor).count('1')
